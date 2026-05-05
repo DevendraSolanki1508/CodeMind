@@ -1,3 +1,5 @@
 repos/
 __pycache__/
 *.pyc
+.env
+vectorstore/chroma_db

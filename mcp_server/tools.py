@@ -190,6 +190,13 @@ def tool_list_modules(
     language_filter: Optional[str] = None,
     limit: int = 50,
 ) -> str:
+    # Guard against None values passed by LLM
+    if repo_name is None or repo_name == "null":
+        repo_name = None
+    if language_filter is None or language_filter == "null":
+        language_filter = None
+    if limit is None:
+        limit = 50
     """
     MCP Tool: list_modules
     List all files/modules currently stored in the vector store.

@@ -240,7 +240,7 @@ if __name__ == "__main__":
     # Full pipeline: load → chunk → embed
     code_files = load_repo(test_url)
     chunks = chunk_repo(code_files)
-    embed_chunks(chunks)
+    embed_chunks(chunks, force_reembed=True)
 
     # Stats
     stats = get_collection_stats()
